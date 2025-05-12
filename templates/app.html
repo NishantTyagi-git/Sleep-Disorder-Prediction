@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Disorder Prediction</title>
+
+    <!-- Embedded CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: #261B2D;
+            color: #f5f5f5;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 9%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: .3s;
+        }
+
+        .logo {
+            position: relative;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .navbar {
+            position: relative;
+        }
+
+        .navbar a {
+            font-size: 1.7rem;
+            color: white;
+            font-weight: 500;
+            margin-left: 3.5rem;
+            transition: .3s;
+        }
+
+        .navbar a:hover {
+            color: crimson;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 10rem 9% 2rem;
+            margin: 0;
+        }
+
+        .model {
+            display: flex;
+            align-items: center;
+            padding: 0 9%;
+            justify-content: center;
+            background: #261B2D no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .model h2 {
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            color: #000000;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem 9%;
+            width: 100%;
+            background: #482e58;
+        }
+
+        .heading {
+            position: relative;
+            display: inline-block;
+            font-size: 5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            position: relative;
+        }
+
+        .footer-text p {
+            font-size: 1.6rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- header design -->
+    <header class="header">
+        <a href="#" class="logo">Hostrack.</a>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <nav class="navbar">
+            <a href="#model" class="activate">Home</a>
+            <a href="http://127.0.0.1:5500/index.html#about">About</a>
+            <a href="http://127.0.0.1:5500/index.html#education">Model</a>
+            <a href="http://127.0.0.1:5500/index.html#contact">Contact</a>
+
+            <span class="active-nav"></span>
+        </nav>
+    </header>
+
+    <!-- Form design -->
+    <section id="model" style="justify-content: center;
+    align-items: center;">
+
+        <h2 class="heading" style="text-align: center;
+        padding: 20px">SLEEP DISORDER PREDICTION</h2>
+
+        <form method="POST" style="
+        padding: 20px;
+        text-align: center;">
+
+            <div class="placeholder"
+            style="margin: 5px;
+            padding: 20px;
+            font-size: 18px;">
+                <label for="Stress Level"></label>
+                <input type="number" step="0.01" name="Stress Level" placeholder="Stress Level" required style="background-color: #32223b;
+                font-size: 30px;
+                margin: 5px;
+                padding-left: 10px;
+                color: crimson;
+                border: 1px solid crimson;
+                border-radius: 5px;"><br>
+
+                <label for="Physical Activity Level"></label>
+                <input type="number" step="0.01" name="Physical Activity Level" placeholder="Physical Activity Level" required style="background-color: #32223b;
+                font-size: 30px;
+                color: crimson;
+                margin: 5px;
+                padding-left: 10px;
+                border: 1px solid crimson;
+                border-radius: 5px;"><br>
+
+                <label for="Heart Rate"></label>
+                <input type="number" step="0.01" name="Heart Rate" placeholder="Heart Rate" required style="background-color: #32223b;
+                color: crimson;
+                font-size: 30px;
+                margin: 5px;
+                padding-left: 10px;
+                border: 1px solid crimson;
+                border-radius: 5px;"><br>
+
+                <label for="Daily Steps"></label>
+                <input type="number" step="0.01" name="Daily Steps" placeholder="Daily Steps" required style="background-color: #32223b;
+                color: crimson;
+                font-size: 30px;
+                padding-left: 10px;
+                margin: 5px;
+                border: 1px solid crimson;
+                border-radius: 5px;"><br>
+
+                <label for="Age"></label>
+                <input type="number" step="1" name="Age" placeholder="Age" required style="background-color: #32223b;
+                font-size: 30px;
+                margin: 5px;
+                color: crimson;
+                padding-left: 10px;
+                border: 1px solid crimson;
+                border-radius: 5px;"><br>
+
+                <label for="Sleep Duration"></label>
+                <input type="number" step="0.01" name="Sleep Duration" placeholder="Sleep Duration" required style="background-color: #32223b;
+                font-size: 30px;
+                margin: 5px;
+                padding-left: 10px;
+                color: crimson;
+                border: 1px solid crimson;
+                border-radius: 5px;"><br>
+        </div>
+
+        <input type="submit" value="Predict" style="background: crimson;
+        color: white;
+        border-radius: 5px;
+        font-size: 30px;
+        width: 150px;">
+    </form>
+
+       {% if result %}
+        <h2 style="font-size: 25px;
+        color: white;
+        font-weight: 500">Prediction Result:</h2>
+        <p  style="font-size: 25px;
+        color: white;
+        font-weight: 500">{{ result }}</p>
+        {% endif %} 
+
+    </section>
+
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Hostrack | All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
